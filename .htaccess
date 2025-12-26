@@ -1,0 +1,7 @@
+RewriteEngine On
+# Se não for um arquivo real
+RewriteCond %{REQUEST_FILENAME} !-f
+# Se não for um diretório real
+RewriteCond %{REQUEST_FILENAME} !-d
+# Redireciona tudo que vier depois da barra para r.php?c=CODIGO
+RewriteRule ^([a-zA-Z0-9]+)$ r.php?c=$1 [L]
